@@ -1,5 +1,6 @@
 
 import PropTypes from 'prop-types';
+import css from './Contacts.module.css'
 
 export const Contacts = ({ contacts, onDelete }) => {
   return (
@@ -8,9 +9,9 @@ export const Contacts = ({ contacts, onDelete }) => {
         {contacts.map(element => {
           const { id, userName, number } = element;
           return (
-            <li key={id} className="Statistics__result">
+            <li key={id} className={css.List}>
               {userName}: {number}
-              <button type="button" name={id} onClick={onDelete}>
+              <button className={css.Btn} type="button" name={id} onClick={onDelete}>
                 Delete
               </button>
             </li>
