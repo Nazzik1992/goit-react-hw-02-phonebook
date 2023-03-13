@@ -47,13 +47,11 @@ export class App extends Component {
   };
 
   handlerDeleteContact = event => {
-    const { contacts } = this.state;
     const id = event.currentTarget.name;
-    const newContacts = contacts.filter(element => element.id !== id);
-
-    this.setState({
-      contacts: [...newContacts],
-    });
+    
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(element => element.id !== id),
+  }));
   };
 
   render() {
